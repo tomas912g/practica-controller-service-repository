@@ -17,5 +17,30 @@ namespace Controller_Service_Repository.Repositories.Implementations
             new Product { Id = 9, Name = "Tablet Samsung Galaxy", Price = 93499.00m },
             new Product { Id = 10, Name = "Impresora multifunción", Price = 73900.00m }
         };
+
+        public List<Product> GetAllProducts()
+        {
+            return _products;
+        }
+        public Product? GetProductById (int id)
+        {
+            return _products.FirstOrDefault(p => p.Id == id);
+        }
+        public void AddProduct(Product product)
+        {
+            product.Id = _products.Any () ?_products.Max(p => p.Id) + 1 : 1;
+            _products.Add(product);
+        }
+        public void UpdateProduct(Product product)
+        {
+            var oldProduct = _products.First(p => p.Id == product.Id);
+            oldProduct.Name = product.Name;
+            oldProduct.Price = product.Price;
+        }
+        public void DeleteProduct(Product product)
+        {
+            var oldProduct = _products.First(p => p.Id == product.Id);
+            _products.Remove(oldProduct);
+        }
     }
 }
