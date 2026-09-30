@@ -1,0 +1,9 @@
+C:\Users\User\source\repos\Controller-Service-Repository\Controller-Service-Repository\obj\Debug\net10.0\Controller-Service-Repository.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\Controller-Service-Repository\Controller-Service-Repository\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\User\source\repos\Controller-Service-Repository\Controller-Service-Repository\obj\Debug\net10.0\Controller-Service-Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\Controller-Service-Repository\Controller-Service-Repository\obj\Debug\net10.0\Controller-Service-Repository.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\Controller-Service-Repository\Controller-Service-Repository\obj\Debug\net10.0\Controller-Service-Repository.AssemblyInfo.cs
+C:\Users\User\source\repos\Controller-Service-Repository\Controller-Service-Repository\obj\Debug\net10.0\Controller-Service-Repository.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Controller-Service-Repository\Controller-Service-Repository\obj\Debug\net10.0\Controller-Service-Repository.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\User\source\repos\Controller-Service-Repository\Controller-Service-Repository\obj\Debug\net10.0\Controller-Service-Repository.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\User\source\repos\Controller-Service-Repository\Controller-Service-Repository\obj\Debug\net10.0\Controller-Service-Repository.sourcelink.json
