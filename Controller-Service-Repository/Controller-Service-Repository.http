@@ -1,6 +1,40 @@
-@Controller_Service_Repository_HostAddress = http://localhost:5207
+@url = http://localhost:5207
 
-GET {{Controller_Service_Repository_HostAddress}}/weatherforecast/
-Accept: application/json
+### 
+GET {{url}}/api/products
 
-###
+### 
+GET {{url}}/api/products/3
+
+### 
+GET {{url}}/api/products/999
+
+### 
+POST {{url}}/api/products
+Content-Type: application/json
+
+{
+  "name": "Teclado Mecánico",
+  "price": 45000
+}
+
+### 
+PUT {{url}}/api/products/1
+Content-Type: application/json
+
+{
+  "name": "Producto Actualizado",
+  "price": 99000
+}
+
+### 
+PUT {{url}}/api/products/999
+Content-Type: application/json
+
+{
+  "name": "Producto Fantasma",
+  "price": 100
+}
+
+### 
+DELETE {{url}}/api/products/2

@@ -1,3 +1,4 @@
+using Controller_Service_Repository.Entities;
 using Controller_Service_Repository.Models.DTOs.Requests;
 using Controller_Service_Repository.Services.Implementations;
 using Microsoft.AspNetCore.Mvc;
@@ -54,6 +55,18 @@ namespace Controller_Service_Repository.Controllers
             }
             _service.DeleteProduct(id);
             return NoContent();
+        }
+        [HttpGet("search")]
+        public IActionResult SearchProductByName(string name)
+        {
+            var products = _service.SearchProductsByName(name);
+            return Ok(products);
+        }
+        [HttpGet("stats")]
+        public IActionResult GetStats()
+        {
+            var stats = _service.GetStats();
+            return Ok(stats);
         }
     }
 }

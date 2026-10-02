@@ -43,5 +43,11 @@ namespace Controller_Service_Repository.Repositories.Implementations
             var oldProduct = _products.First(p => p.Id == product.Id);
             _products.Remove(oldProduct);
         }
+        public List<Product> SearchProductsByName(string name)
+        {
+            return _products
+                .Where(p => p.Name.ToLower().Contains(name.ToLower()))
+                .ToList();
+        }
     }
 }

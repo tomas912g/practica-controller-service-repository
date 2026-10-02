@@ -77,5 +77,36 @@ namespace Controller_Service_Repository.Services.Implementations
             }
             _repository.DeleteProduct(productExiste);
         }
+        public List<ProductForReadDto> SearchProductsByName(string name)
+        {
+            var products = _repository.SearchProductsByName(name);
+            var dtos = new List<ProductForReadDto>();
+            foreach (var product in products)
+            {
+                var dto = new ProductForReadDto();
+                dto.Id = product.Id;
+                dto.Name = product.Name;
+                dto.Price = product.Price;
+                dtos.Add(dto);
+            }
+            return dtos;
+        }
+        public ProductStatsDto GetStats()
+        {
+            var products = _repository.GetAllProducts();
+            var stats = new ProductStatsDto();
+            if(products.Count == 0)
+            {
+                stats.Total = 0;
+                stats.AveragePrice = 0;
+                stats.MostExpensiveName = "";
+                return stats;
+            }
+            stats.Total = products.Count();
+            stats.AveragePrice = products.Average(p => p.Price);
+            stats.MostExpensiveName = products.OrderByDescending(p => p.Price).First().Name;
+
+            return stats;
+        }
     }
 }
