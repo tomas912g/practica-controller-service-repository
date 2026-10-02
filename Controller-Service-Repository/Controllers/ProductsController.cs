@@ -1,26 +1,59 @@
+using Controller_Service_Repository.Models.DTOs.Requests;
+using Controller_Service_Repository.Services.Implementations;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Controller_Service_Repository.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class ProductsController : ControllerBase
     {
-        private static readonly string[] Summaries =
-        [
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        ];
+        private ProductService _service = new ProductService();
 
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        [HttpGet]
+        public IActionResult GetAllProducts()
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            var products = _service.GetAllProducts();
+            return Ok(products);
+        }
+        [HttpGet("{id}")]
+        public IActionResult GetProductById(int id)
+        {
+            var product = _service.GetProductById(id);
+            if (product == null)
             {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+                return NotFound();
+            }
+            return Ok(product);
+        }
+        [HttpPost]
+        public IActionResult CreateProduct(ProductForCreateDto dto)
+        {
+            var product = _service.CreateProduct(dto);
+
+            return Created($"/api/products/{product.Id}", product);
+        }
+        [HttpPut("{id}")]
+        public IActionResult UpdateProduct(int id, ProductForUpdateDto dto)
+        {
+            var productExist = _service.GetProductById(id);
+            if (productExist == null)
+            {
+                return NotFound();
+            }
+            _service.UpdateProduct(id, dto);
+            return NoContent();
+        }
+        [HttpDelete("{id}")]
+        public IActionResult DeleteProduct(int id)
+        {
+            var productExist = _service.GetProductById(id);
+            if(productExist == null)
+            {
+                return NotFound();
+            }
+            _service.DeleteProduct(id);
+            return NoContent();
         }
     }
 }

@@ -2,10 +2,11 @@
 using Controller_Service_Repository.Models.DTOs.Requests;
 using Controller_Service_Repository.Models.DTOs.Responses;
 using Controller_Service_Repository.Repositories.Implementations;
+using Controller_Service_Repository.Services.Interfaces;
 
 namespace Controller_Service_Repository.Services.Implementations
 {
-    public class ProductService
+    public class ProductService : IProductService
     {
         private ProductRepository _repository = new ProductRepository();
         public List<ProductForReadDto> GetAllProducts()

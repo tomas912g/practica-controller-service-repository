@@ -1,8 +1,9 @@
 ﻿using Controller_Service_Repository.Entities;
+using Controller_Service_Repository.Repositories.Interfaces;
 
 namespace Controller_Service_Repository.Repositories.Implementations
 {
-    public class ProductRepository
+    public class ProductRepository : IProductRepository
     {
         private static List<Product> _products = new()
         {
