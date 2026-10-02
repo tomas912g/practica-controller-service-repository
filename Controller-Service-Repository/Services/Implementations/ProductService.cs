@@ -40,18 +40,23 @@ namespace Controller_Service_Repository.Services.Implementations
         }
         public ProductForReadDto CreateProduct(ProductForCreateDto dto)
         {
+            var products = _repository.GetAllProducts();
+            if (products.Any(p => p.Name.ToLower() == dto.Name.ToLower()))
+            {
+                return null; 
+            }
             var newProduct = new Product();
             newProduct.Name = dto.Name;
             newProduct.Price = dto.Price;
 
             _repository.AddProduct(newProduct);
 
-            var productToDto = new ProductForReadDto();
-            productToDto.Id = newProduct.Id;
-            productToDto.Name = newProduct.Name;
-            productToDto.Price = newProduct.Price;
+            var responseDto = new ProductForReadDto();
+            responseDto.Id = newProduct.Id;
+            responseDto.Name = newProduct.Name;
+            responseDto.Price = newProduct.Price;
 
-            return productToDto;
+            return responseDto;
         }
         public void UpdateProduct(int id, ProductForUpdateDto dto)
         {

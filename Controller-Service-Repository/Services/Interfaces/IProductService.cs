@@ -11,7 +11,7 @@ namespace Controller_Service_Repository.Services.Interfaces
         void UpdateProduct(int id, ProductForUpdateDto dto);
         void DeleteProduct(int id);
         List<ProductForReadDto> SearchProductsByName(string name);
-        ProductStatsDto GetStatus();
+        ProductStatsDto GetStats();
 
     }
 }

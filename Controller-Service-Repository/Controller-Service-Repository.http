@@ -38,3 +38,21 @@ Content-Type: application/json
 
 ### 
 DELETE {{url}}/api/products/2
+
+###
+POST {{url}}/api/products
+Content-Type: application/json
+
+{
+  "name": "",
+  "price": 100
+}
+
+### 
+POST {{url}}/api/products
+Content-Type: application/json
+
+{
+  "name": "Teclado Gamer",
+  "price": 50000
+}

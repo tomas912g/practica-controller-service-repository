@@ -77,5 +77,31 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Controller_Service_Repository.Controllers.ProductsController",
+    "Method": "SearchProductByName",
+    "RelativePath": "api/Products/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Controller_Service_Repository.Controllers.ProductsController",
+    "Method": "GetStats",
+    "RelativePath": "api/Products/stats",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

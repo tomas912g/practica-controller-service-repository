@@ -31,6 +31,10 @@ namespace Controller_Service_Repository.Controllers
         public IActionResult CreateProduct(ProductForCreateDto dto)
         {
             var product = _service.CreateProduct(dto);
+            if (product == null)
+            {
+                return Conflict("Ya existe un producto con ese nombre.");
+            }
 
             return Created($"/api/products/{product.Id}", product);
         }
