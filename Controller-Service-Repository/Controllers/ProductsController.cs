@@ -1,6 +1,7 @@
 using Controller_Service_Repository.Entities;
 using Controller_Service_Repository.Models.DTOs.Requests;
 using Controller_Service_Repository.Services.Implementations;
+using Controller_Service_Repository.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Controller_Service_Repository.Controllers
@@ -9,7 +10,11 @@ namespace Controller_Service_Repository.Controllers
     [Route("api/[controller]")]
     public class ProductsController : ControllerBase
     {
-        private ProductService _service = new ProductService();
+        private readonly IProductService _service;
+        public ProductsController(IProductService service)
+        {
+            _service = service;
+        }
 
         [HttpGet]
         public IActionResult GetAllProducts()

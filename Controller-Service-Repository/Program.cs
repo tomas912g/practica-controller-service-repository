@@ -1,4 +1,9 @@
 
+using Controller_Service_Repository.Repositories.Implementations;
+using Controller_Service_Repository.Repositories.Interfaces;
+using Controller_Service_Repository.Services.Implementations;
+using Controller_Service_Repository.Services.Interfaces;
+
 namespace Controller_Service_Repository
 {
     public class Program
@@ -13,6 +18,8 @@ namespace Controller_Service_Repository
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
 
+            builder.Services.AddScoped<IProductRepository, ProductRepository>();
+            builder.Services.AddScoped<IProductService, ProductService>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
