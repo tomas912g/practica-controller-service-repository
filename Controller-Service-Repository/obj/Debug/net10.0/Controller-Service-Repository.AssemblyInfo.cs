@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Controller-Service-Repository")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c5a9d060704e21bf8c37612b0bc93b231d0a96e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ee1e46dfc8e92b19d7bf20cfb9cad96d7a8ee62b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Controller-Service-Repository")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Controller-Service-Repository")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
